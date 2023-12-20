@@ -13,7 +13,9 @@ class App extends Component {
 
   formSubmitHandler = ({ name, number }) => {
     const { contacts } = this.state;
-    const isContactExist = contacts.some(contact => contact.name === name);
+    const isContactExist = contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
 
     if (isContactExist) {
       alert(`${name} is already in contacts.`);
